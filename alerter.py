@@ -30,8 +30,7 @@ assert(simulate_network_alert(204.2) == 500)
 print('System status check complete.')
 print(f'Number of failed alerts: {alert_failure_count}')
 
-
-@patch('__main__.simulate_network_alert')
+@patch('simulate_network_alert')
 def test_failure_count_increment(mock_alert):
     mock_alert.return_value = 500
     temperature_alert_in_celsius(100)
